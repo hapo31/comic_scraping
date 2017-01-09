@@ -5,8 +5,8 @@
 python yawaspi.py [マンガのid] [最大話数]  
 
 # IDってなに
-↓の下線の部分のアルファベット  
-http://yawaspi.com/<u>dungeon</u>/index.html  
+↓の太字のところ  
+ttp://yawaspi.com/<b>dungeon</b>/index.html  
 
 # TODO
 URL取得スクリプトができてるのがやわらかスピリッツだけ  
