@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-import requests
 import os
 import time
+import requests
 
 class GetFiles:
     """
