@@ -9,9 +9,8 @@ import time
 import requests
 
 from GetFiles import GetFiles
- 
-def main():
 
+def main():
     content_id = ""
     max_ep = 0
     if len(sys.argv) < 3:
@@ -46,6 +45,7 @@ def main():
             while True:
                 url = "http://yawaspi.com/comic/%s/pc/%03d/%03d_001_%02d.jpg" % (content_id, epnum, epnum, i)
                 print(url)
+                # URL先のファイルが存在するならオブジェクトにURLをappend
                 if requests.head(url).status_code == 200:
                     get_files.url_list.append(url)
                 else:
