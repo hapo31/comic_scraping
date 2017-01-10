@@ -42,20 +42,19 @@ def main():
                 pass
             # その話のページのURLをnot foundが返ってくるまで取得する
             i = 1
-            urls = []
+            get_files = GetFiles([], "%s/%03d" % (content_id, epnum))
             while True:
                 url = "http://yawaspi.com/comic/%s/pc/%03d/%03d_001_%02d.jpg" % (content_id, epnum, epnum, i)
                 print(url)
                 if requests.head(url).status_code == 200:
-                    urls.append(url)
+                    get_files.url_list.append(url)
                 else:
                     break
                 i += 1
-                time.sleep(0.1)
+                time.sleep(0.1) # サーバーに負荷を掛けないように手加減する
 
-            if len(urls) > 0:
-                # ファイルを取得
-                GetFiles(urls, "%s/%03d" % (content_id, epnum)).start()
+            # ファイルを取得
+            get_files.start()
 
 if __name__ == '__main__':
     main()
